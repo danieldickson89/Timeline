@@ -124,21 +124,10 @@
 			isa = PBXGroup;
 			children = (
 				01E3FC241BE92C7600187536 /* AppDelegate.swift */,
-				39F870511C7D05EC00ED524D /* User.swift */,
-				39F870591C7D169600ED524D /* UserController.swift */,
-				39F870531C7D094100ED524D /* Comment.swift */,
-				39F870551C7D0AF600ED524D /* Like.swift */,
-				39F870571C7D0BA500ED524D /* Post.swift */,
-				39F8705B1C7D218D00ED524D /* PostController.swift */,
-				39F8705D1C7D27F000ED524D /* ImageController.swift */,
 				01E3FC281BE92C7600187536 /* Main.storyboard */,
-				39F8704D1C7D03A500ED524D /* LoginSignupChoiceViewController.swift */,
-				39F8704F1C7D04A900ED524D /* LoginSignupViewController.swift */,
-				39F870431C7CFC5B00ED524D /* TimelineTableViewController.swift */,
-				39F8704B1C7D028F00ED524D /* AddPhotoTableViewController.swift */,
-				39F870451C7CFD7E00ED524D /* PostDetailTableViewController.swift */,
-				39F870471C7D003100ED524D /* UserSearchTableViewController.swift */,
-				39F870491C7D016700ED524D /* ProfileViewController.swift */,
+				39F8705F1C7D578300ED524D /* Models */,
+				39F870601C7D5A8800ED524D /* Model Controllers */,
+				39F870611C7D5AB200ED524D /* ViewControllers */,
 				01E3FC2B1BE92C7600187536 /* Assets.xcassets */,
 				01E3FC2D1BE92C7600187536 /* LaunchScreen.storyboard */,
 				01E3FC301BE92C7600187536 /* Info.plist */,
@@ -162,6 +151,41 @@
 				01E3FC461BE92C7700187536 /* Info.plist */,
 			);
 			path = TimelineUITests;
+			sourceTree = "<group>";
+		};
+		39F8705F1C7D578300ED524D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				39F870511C7D05EC00ED524D /* User.swift */,
+				39F870571C7D0BA500ED524D /* Post.swift */,
+				39F870531C7D094100ED524D /* Comment.swift */,
+				39F870551C7D0AF600ED524D /* Like.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		39F870601C7D5A8800ED524D /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				39F870591C7D169600ED524D /* UserController.swift */,
+				39F8705B1C7D218D00ED524D /* PostController.swift */,
+				39F8705D1C7D27F000ED524D /* ImageController.swift */,
+			);
+			name = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		39F870611C7D5AB200ED524D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				39F8704D1C7D03A500ED524D /* LoginSignupChoiceViewController.swift */,
+				39F8704F1C7D04A900ED524D /* LoginSignupViewController.swift */,
+				39F870431C7CFC5B00ED524D /* TimelineTableViewController.swift */,
+				39F8704B1C7D028F00ED524D /* AddPhotoTableViewController.swift */,
+				39F870451C7CFD7E00ED524D /* PostDetailTableViewController.swift */,
+				39F870471C7D003100ED524D /* UserSearchTableViewController.swift */,
+				39F870491C7D016700ED524D /* ProfileViewController.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
