@@ -9,6 +9,8 @@
 import UIKit
 
 class UserSearchTableViewController: UITableViewController {
+    
+    var userDataSource: [User] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
