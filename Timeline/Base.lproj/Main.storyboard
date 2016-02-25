@@ -19,7 +19,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p2R-aR-29a" id="0C8-Sd-Oow">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -52,22 +52,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="iam-SP-B0N">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="66"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fEQ-pO-zuB">
+                                    <rect key="frame" x="50" y="30" width="500" height="29"/>
+                                    <segments>
+                                        <segment title="Friends"/>
+                                        <segment title="Add Friend"/>
+                                    </segments>
+                                </segmentedControl>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="fEQ-pO-zuB" firstAttribute="top" secondItem="iam-SP-B0N" secondAttribute="top" constant="30" id="JGn-br-cNd"/>
+                                <constraint firstItem="fEQ-pO-zuB" firstAttribute="leading" secondItem="iam-SP-B0N" secondAttribute="leading" constant="50" id="XEU-ik-w97"/>
+                                <constraint firstAttribute="trailing" secondItem="fEQ-pO-zuB" secondAttribute="trailing" constant="50" id="XvN-sl-e4T"/>
+                            </constraints>
+                        </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="xmn-IF-jeP">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="usernameCell" id="xmn-IF-jeP">
+                                <rect key="frame" x="0.0" y="94" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xmn-IF-jeP" id="NjG-lF-jhX">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Oqj-WM-epB">
-                                            <rect key="frame" x="240" y="7" width="121" height="29"/>
-                                            <segments>
-                                                <segment title="First"/>
-                                                <segment title="Second"/>
-                                            </segments>
-                                        </segmentedControl>
-                                    </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="PKM-0n-3ks" kind="show" id="PgD-IQ-bEj"/>
@@ -89,12 +99,46 @@
                                 <segment title="Friends"/>
                                 <segment title="Add Friend"/>
                             </segments>
+                            <connections>
+                                <action selector="modeSegmentedControlValueChanged:" destination="923-ru-LNh" eventType="valueChanged" id="VH1-cv-pIA"/>
+                            </connections>
                         </segmentedControl>
                     </navigationItem>
+                    <connections>
+                        <outlet property="modeSegmentedControl" destination="fEQ-pO-zuB" id="Scb-04-5lJ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3fp-u5-Hvq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1987" y="954"/>
+        </scene>
+        <!--User Search Results Table View Controller-->
+        <scene sceneID="rDQ-eZ-Hqn">
+            <objects>
+                <tableViewController storyboardIdentifier="userSearchResults" id="9j5-z7-kjb" customClass="UserSearchResultsTableViewController" customModule="Timeline" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Tgw-9a-ad2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="usernameCell" id="ONe-sU-4d7">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ONe-sU-4d7" id="nY4-XZ-gLQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="9j5-z7-kjb" id="vSy-di-15v"/>
+                            <outlet property="delegate" destination="9j5-z7-kjb" id="bdK-Zm-kVh"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cGe-nw-ueA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2708" y="955"/>
         </scene>
         <!--Profile-->
         <scene sceneID="Umo-ge-0wz">
@@ -129,7 +173,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FSs-lO-sSS" id="fpt-NJ-XPj">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -157,7 +201,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="u5s-ey-HAV" id="Boq-df-l3q">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -447,10 +491,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="GPb-IP-8Ud"/>
-        <segue reference="pDw-gi-NtE"/>
         <segue reference="Rqe-FP-pJO"/>
-        <segue reference="PgD-IQ-bEj"/>
+        <segue reference="pDw-gi-NtE"/>
+        <segue reference="GPb-IP-8Ud"/>
         <segue reference="318-bo-mTu"/>
+        <segue reference="PgD-IQ-bEj"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -10,7 +10,7 @@ import Foundation
 
 class UserController {
     
-    let currentUser: User! = nil
+    let currentUser: User! = User(username: "daniel", bio: "", url: "", identifier: "123")
     
     static let sharedUserController = UserController()
     
@@ -30,8 +30,8 @@ class UserController {
         completion(follows: true)
     }
     
-    static func followedByUser(user: User, completion: (followingUsers: [User?]) -> Void) {
-        completion(followingUsers: [mockUsers()[3]])
+    static func followedByUser(user: User, completion: (followingUsers: [User]?) -> Void) {
+        completion(followingUsers: [mockUsers()[3], mockUsers()[2], mockUsers()[1]])
     }
     
     static func authenticateUser(email: String, password: String, completion: (success: Bool, user: User?) -> Void) {
