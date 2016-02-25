@@ -10,7 +10,7 @@ import Foundation
 
 class UserController {
     
-    let currentUser: User! = UserController.mockUsers().first!
+    let currentUser: User! = nil
     
     static let sharedUserController = UserController()
     

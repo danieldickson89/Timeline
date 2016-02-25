@@ -19,6 +19,14 @@ class TimelineTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        if UserController.sharedUserController.currentUser != nil {
+            tableView.reloadData()
+        } else {
+            self.tabBarController?.performSegueWithIdentifier("toLoginSignupChoice", sender: nil)
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

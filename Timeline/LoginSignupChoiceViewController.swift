@@ -10,10 +10,17 @@ import UIKit
 
 class LoginSignupChoiceViewController: UIViewController {
 
+    @IBOutlet weak var timelineLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var loginButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        signUpButton.layer.cornerRadius = 3
+        loginButton.layer.cornerRadius = 3
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,14 +29,18 @@ class LoginSignupChoiceViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let loginSignupViewController = segue.destinationViewController as! LoginSignupViewController
+        if segue.identifier == "toSignUp" {
+            loginSignupViewController.mode = .Signup
+        } else if segue == "toLogin" {
+            loginSignupViewController.mode = .Login
+        }
     }
-    */
+
 
 }
