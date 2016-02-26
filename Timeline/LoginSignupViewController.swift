@@ -18,6 +18,8 @@ class LoginSignupViewController: UIViewController {
     @IBOutlet weak var urlTextField: UITextField!
     @IBOutlet weak var actionButton: UIButton!
     var mode: ViewMode = .Login
+    var user: User?
+    var viewMode = ViewMode.Signup
     var fieldsAreValid: Bool {
         get {
             switch mode {
@@ -31,6 +33,7 @@ class LoginSignupViewController: UIViewController {
             } else {
                 return false
                 }
+            case .Edit: return !(usernameTextField.text!.isEmpty)
             }
         }
     }
@@ -39,6 +42,7 @@ class LoginSignupViewController: UIViewController {
     enum ViewMode {
         case Login
         case Signup
+        case Edit
     }
 
     override func viewDidLoad() {
@@ -62,7 +66,23 @@ class LoginSignupViewController: UIViewController {
             usernameTextField.hidden = true
             bioTextField.hidden = true
             urlTextField.hidden = true
+        case .Edit:
+            actionButton.setTitle("Update", forState: .Normal)
+            
+            emailTextField.hidden = true
+            passwordTextField.hidden = true
+            
+            if let user = self.user {
+                usernameTextField.text = user.username
+                bioTextField.text = user.bio
+                urlTextField.text = user.url
+            }
         }
+    }
+    
+    func updateWithUser(user: User) {
+        self.user = user
+        viewMode = .Edit
     }
     
     @IBAction func actionButtonTapped(sender: AnyObject) {
@@ -80,6 +100,13 @@ class LoginSignupViewController: UIViewController {
                     self.dismissViewControllerAnimated(true, completion: nil)
                 } else {
                     self.presentValidationAlertWithTitle("Invalid Login", message: "Email or Password was not valid. Try again.")
+                }
+            })
+            case .Edit: UserController.updateUser(self.user!, username: self.usernameTextField.text!, bio: self.bioTextField.text, url: self.urlTextField.text, completion: { (success, user) -> Void in
+                if success {
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                } else {
+                    self.presentValidationAlertWithTitle("Unable to Update User", message: "Please check your information and try again")
                 }
             })
             }

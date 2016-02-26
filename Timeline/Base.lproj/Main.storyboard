@@ -153,16 +153,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SrO-QI-cuE">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                <rect key="frame" x="0.0" y="76" width="600" height="475"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lVb-Aj-tdu">
                                     <size key="itemSize" width="165" height="152"/>
-                                    <size key="headerReferenceSize" width="50" height="209"/>
+                                    <size key="headerReferenceSize" width="50" height="135"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="e79-94-h8M">
-                                        <rect key="frame" x="0.0" y="209" width="165" height="152"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageReusableCell" id="e79-94-h8M" customClass="ImageCollectionViewCell" customModule="Timeline" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="135" width="165" height="152"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="165" height="152"/>
@@ -174,28 +174,37 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <connections>
+                                            <outlet property="imageView" destination="uKP-nD-F6I" id="42T-Or-9Et"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="profileReusableView" id="8tt-Sn-Cuk">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="209"/>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="profileReusableView" id="8tt-Sn-Cuk" customClass="ProfileHeaderCollectionReusableView" customModule="Timeline" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="135"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="R3g-QW-a7d">
-                                            <rect key="frame" x="8" y="8" width="584" height="193"/>
+                                            <rect key="frame" x="8" y="8" width="584" height="119"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W3L-2G-yf9">
-                                                    <rect key="frame" x="0.0" y="0.0" width="584" height="65"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="584" height="40"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D3C-5Q-J1r">
-                                                    <rect key="frame" x="0.0" y="65" width="584" height="64"/>
+                                                    <rect key="frame" x="0.0" y="40" width="584" height="40"/>
                                                     <state key="normal" title="url"/>
+                                                    <connections>
+                                                        <action selector="urlButtonTapped:" destination="8tt-Sn-Cuk" eventType="touchUpInside" id="dqF-LH-YWC"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mo6-0S-94x">
-                                                    <rect key="frame" x="0.0" y="129" width="584" height="65"/>
+                                                    <rect key="frame" x="0.0" y="80" width="584" height="40"/>
                                                     <state key="normal" title="followUser"/>
+                                                    <connections>
+                                                        <action selector="followUserButtonTapped:" destination="8tt-Sn-Cuk" eventType="touchUpInside" id="TMH-KJ-NTt"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </stackView>
@@ -218,6 +227,11 @@
                                         <constraint firstItem="R3g-QW-a7d" firstAttribute="leading" secondItem="8tt-Sn-Cuk" secondAttribute="leading" constant="8" id="ycL-7N-6tn"/>
                                         <constraint firstItem="R3g-QW-a7d" firstAttribute="centerY" secondItem="8tt-Sn-Cuk" secondAttribute="centerY" id="zMp-kh-jOb"/>
                                     </constraints>
+                                    <connections>
+                                        <outlet property="bioLabel" destination="W3L-2G-yf9" id="YiV-b2-a63"/>
+                                        <outlet property="followUserButton" destination="mo6-0S-94x" id="wAg-0T-Z0R"/>
+                                        <outlet property="urlButton" destination="D3C-5Q-J1r" id="AdA-ZH-CK3"/>
+                                    </connections>
                                 </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="PKM-0n-3ks" id="wPY-mq-3yA"/>
@@ -229,16 +243,17 @@
                         <constraints>
                             <constraint firstItem="SrO-QI-cuE" firstAttribute="leading" secondItem="uBk-hx-TfJ" secondAttribute="leading" id="Prw-1a-77f"/>
                             <constraint firstItem="rHr-vX-gPb" firstAttribute="top" secondItem="SrO-QI-cuE" secondAttribute="bottom" id="gTY-Bw-0Wf"/>
-                            <constraint firstItem="SrO-QI-cuE" firstAttribute="top" secondItem="uBk-hx-TfJ" secondAttribute="top" id="u2m-nb-5cH"/>
+                            <constraint firstItem="SrO-QI-cuE" firstAttribute="top" secondItem="uBk-hx-TfJ" secondAttribute="top" constant="76" id="u2m-nb-5cH"/>
                             <constraint firstAttribute="trailing" secondItem="SrO-QI-cuE" secondAttribute="trailing" id="zR3-E2-bYJ"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" id="1ur-rD-KXH"/>
-                    <navigationItem key="navigationItem" title="Title" id="mH2-e1-YIV"/>
+                    <navigationItem key="navigationItem" title="Title" id="hx6-oX-0M5">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="b2X-Ud-z02" userLabel="Edit"/>
+                    </navigationItem>
                     <connections>
-                        <outlet property="bioLabel" destination="W3L-2G-yf9" id="UJ7-KX-3Hg"/>
-                        <outlet property="followUserButton" destination="mo6-0S-94x" id="kyv-uK-cJY"/>
-                        <outlet property="urlButton" destination="D3C-5Q-J1r" id="IqH-N6-1hM"/>
+                        <outlet property="collectionView" destination="SrO-QI-cuE" id="gdX-IV-U5z"/>
+                        <outlet property="editBarButton" destination="b2X-Ud-z02" id="tFa-gN-9KO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1qp-50-mMC" userLabel="First Responder" sceneMemberID="firstResponder"/>
