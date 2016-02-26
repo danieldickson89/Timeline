@@ -10,6 +10,10 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
+    @IBOutlet weak var bioLabel: UILabel!
+    @IBOutlet weak var urlButton: UIButton!
+    @IBOutlet weak var followUserButton: UIButton!
+    
     var user: User?
 
     override func viewDidLoad() {
