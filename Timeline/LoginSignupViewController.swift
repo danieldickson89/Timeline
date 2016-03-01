@@ -58,6 +58,11 @@ class LoginSignupViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func cancelButtonPressed(sender: AnyObject) {
+        navigationController?.popViewControllerAnimated(true)
+    }
+    
+    
     func updateViewBasedOnMode() {
         
         switch mode {
@@ -88,7 +93,7 @@ class LoginSignupViewController: UIViewController {
     @IBAction func actionButtonTapped(sender: AnyObject) {
         if fieldsAreValid {
             switch mode {
-            case .Signup: UserController.createUser(emailTextField.text!, username: usernameTextField.text!, password: passwordTextField.text!, completion: { (success, user) -> Void in
+            case .Signup: UserController.createUser(emailTextField.text!, username: usernameTextField.text!, password: passwordTextField.text!, bio: bioTextField.text, url: urlTextField.text, completion: { (success, user) -> Void in
                 if success {
                     self.dismissViewControllerAnimated(true, completion: nil)
                 } else {

@@ -8,20 +8,50 @@
 
 import Foundation
 
-struct User: Equatable {
+struct User: Equatable, FirebaseType {
     
-    let username: String
-    let bio: String?
-    let url: String?
-    let identifier: String?
+    private let kUsername = "username"
+    private let kBio = "bio"
+    private let kURL = "url"
     
-    init(username: String, bio: String? = nil, url: String? = nil, identifier: String) {
+    var username = ""
+    var bio: String?
+    var url: String?
+    var identifier: String?
+    var endpoint: String {
+        return "users"
+    }
+    var jsonValue: [String: AnyObject] {
+        var json: [String: AnyObject] = [kUsername: username]
+        
+        if let bio = bio {
+            json.updateValue(bio, forKey: kBio)
+        }
+        
+        if let url = url {
+            json.updateValue(url, forKey: kURL)
+        }
+        
+        return json
+    }
+    
+    init?(json: [String: AnyObject], identifier: String) {
+        
+        guard let username = json[kUsername] as? String else { return nil }
+        
         self.username = username
-        self.bio = bio
-        self.url = url
+        self.bio = json[kBio] as? String
+        self.url = json[kURL] as? String
         self.identifier = identifier
     }
     
+    init(username: String, uid: String, bio: String? = nil, url: String? = nil) {
+        
+        self.username = username
+        self.bio = bio
+        self.url = url
+        self.identifier = uid
+    }
 }
 
 func ==(lhs: User, rhs: User) -> Bool {
