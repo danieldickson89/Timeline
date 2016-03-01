@@ -97,7 +97,7 @@
             </objects>
             <point key="canvasLocation" x="3355" y="-293"/>
         </scene>
-        <!--Friends-->
+        <!--User Search Table View Controller-->
         <scene sceneID="LUR-Of-CnP">
             <objects>
                 <tableViewController id="923-ru-LNh" customClass="UserSearchTableViewController" customModule="Timeline" customModuleProvider="target" sceneMemberID="viewController">
@@ -123,7 +123,7 @@
                             <outlet property="delegate" destination="923-ru-LNh" id="hfE-jG-qYS"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Friends" id="wwY-GC-74C"/>
+                    <tabBarItem key="tabBarItem" title="" image="friends" id="wwY-GC-74C"/>
                     <navigationItem key="navigationItem" id="Otf-fz-gjq">
                         <nil key="title"/>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="tdD-2R-aeC">
@@ -282,7 +282,7 @@
                             <constraint firstAttribute="trailing" secondItem="SrO-QI-cuE" secondAttribute="trailing" id="zR3-E2-bYJ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" id="1ur-rD-KXH"/>
+                    <tabBarItem key="tabBarItem" title="" image="profile" id="1ur-rD-KXH"/>
                     <navigationItem key="navigationItem" title="Title" id="hx6-oX-0M5">
                         <barButtonItem key="rightBarButtonItem" title="Item" id="b2X-Ud-z02" userLabel="Edit"/>
                     </navigationItem>
@@ -457,11 +457,11 @@
             </objects>
             <point key="canvasLocation" x="4281" y="-682"/>
         </scene>
-        <!--Timeline-->
+        <!--Navigation Controller-->
         <scene sceneID="BSk-by-m0D">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="056-Cp-WBm" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Timeline" id="n55-lA-qWg"/>
+                    <tabBarItem key="tabBarItem" title="" image="timeline" id="n55-lA-qWg"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Tjr-Y3-ejJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -555,7 +555,7 @@
                         <outlet property="loginButton" destination="aqJ-nY-OJU" id="HgZ-Eu-pSe"/>
                         <outlet property="signUpButton" destination="37e-Ll-Vdr" id="zOe-kQ-A4J"/>
                         <outlet property="timelineLabel" destination="Dao-l2-BKX" id="rxd-vD-Pi4"/>
-                        <segue destination="hBN-yK-0bz" kind="presentation" id="56U-33-SLH"/>
+                        <segue destination="hBN-yK-0bz" kind="presentation" identifier="toTimelineTableViewController" id="56U-33-SLH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wsD-xj-xTi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -574,35 +574,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="cW6-cL-irU">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="cW6-cL-irU">
                                 <rect key="frame" x="20" y="64" width="560" height="311"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KXT-iG-7Yd">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KXT-iG-7Yd">
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="52"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fmX-Mk-o62">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fmX-Mk-o62">
                                         <rect key="frame" x="0.0" y="52" width="560" height="52"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KPn-KW-jR1">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KPn-KW-jR1">
                                         <rect key="frame" x="0.0" y="104" width="560" height="52"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bio" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QUL-UV-4z0">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bio" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QUL-UV-4z0">
                                         <rect key="frame" x="0.0" y="156" width="560" height="52"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="URL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ykY-5N-JWl">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="URL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ykY-5N-JWl">
                                         <rect key="frame" x="0.0" y="208" width="560" height="52"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcc-hv-mnr">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcc-hv-mnr">
                                         <rect key="frame" x="0.0" y="259" width="560" height="52"/>
                                         <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="15"/>
@@ -647,7 +647,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="kTg-JP-5bz" kind="presentation" identifier="toLoginSignpChoice" id="pDw-gi-NtE"/>
+                        <segue destination="kTg-JP-5bz" kind="presentation" identifier="toLoginSignupChoice" id="pDw-gi-NtE"/>
                         <segue destination="056-Cp-WBm" kind="relationship" relationship="viewControllers" id="8ob-sx-61D"/>
                         <segue destination="OoG-GG-MVv" kind="relationship" relationship="viewControllers" id="EEk-pL-5Dd"/>
                         <segue destination="PKM-0n-3ks" kind="relationship" relationship="viewControllers" id="DCe-n6-WRa"/>
@@ -657,11 +657,11 @@
             </objects>
             <point key="canvasLocation" x="1723" y="-293"/>
         </scene>
-        <!--Friends-->
+        <!--Navigation Controller-->
         <scene sceneID="wJ4-E0-44R">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OoG-GG-MVv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Friends" id="whR-0d-z8x"/>
+                    <tabBarItem key="tabBarItem" title="" image="friends" id="whR-0d-z8x"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dbq-cJ-RaO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -729,13 +729,18 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y1Z-Bb-YgN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-410" y="-242"/>
+            <point key="canvasLocation" x="-410" y="-210"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="friends" width="44" height="44"/>
+        <image name="profile" width="44" height="44"/>
+        <image name="timeline" width="44" height="44"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="DCe-n6-WRa"/>
         <segue reference="pDw-gi-NtE"/>
         <segue reference="bgR-8R-6mc"/>
-        <segue reference="Fhs-26-8ro"/>
+        <segue reference="DCe-n6-WRa"/>
+        <segue reference="318-bo-mTu"/>
     </inferredMetricsTieBreakers>
 </document>

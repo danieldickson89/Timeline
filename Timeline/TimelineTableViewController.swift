@@ -24,7 +24,7 @@ class TimelineTableViewController: UITableViewController {
                 loadTimelineForUser(currentUser)
             }
         } else {
-            tabBarController?.performSegueWithIdentifier("toLoginSignpChoice", sender:nil)
+            tabBarController?.performSegueWithIdentifier("toLoginSignupChoice", sender:nil)
         }
     }
     @IBAction func userRefreshedTable(sender: AnyObject) {

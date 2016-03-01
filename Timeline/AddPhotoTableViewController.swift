@@ -79,13 +79,13 @@ class AddPhotoTableViewController: UITableViewController, UIImagePickerControlle
                 } else {
                     let failedAlert = UIAlertController(title: "Failed!", message: "Imaged failed to post. Please try again.", preferredStyle: .Alert)
                     failedAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-                    self.presentViewController(failedAlert, animated: true, completion: nil)
+                    self.navigationController?.popViewControllerAnimated(true)
                 }
             })
         }
     }
     
     @IBAction func cancelButtonTapped(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.navigationController?.popViewControllerAnimated(true)
     }
 }
