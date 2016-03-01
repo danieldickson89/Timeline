@@ -197,7 +197,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageCell" id="e79-94-h8M" customClass="ImageCollectionViewCell" customModule="Timeline" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="135" width="165" height="152"/>
+                                        <rect key="frame" x="0.0" y="199" width="165" height="152"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="165" height="152"/>
@@ -215,7 +215,7 @@
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="headerView" id="8tt-Sn-Cuk" customClass="ProfileHeaderCollectionReusableView" customModule="Timeline" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="135"/>
+                                    <rect key="frame" x="0.0" y="64" width="600" height="135"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="R3g-QW-a7d">
@@ -229,7 +229,7 @@
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D3C-5Q-J1r">
                                                     <rect key="frame" x="0.0" y="39" width="584" height="40"/>
-                                                    <state key="normal" title="url"/>
+                                                    <state key="normal" title="homepage"/>
                                                     <connections>
                                                         <action selector="urlButtonTapped:" destination="8tt-Sn-Cuk" eventType="touchUpInside" id="dqF-LH-YWC"/>
                                                     </connections>
@@ -284,7 +284,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="profile" id="1ur-rD-KXH"/>
                     <navigationItem key="navigationItem" title="Title" id="hx6-oX-0M5">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="b2X-Ud-z02" userLabel="Edit"/>
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="b2X-Ud-z02" userLabel="Edit"/>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="SrO-QI-cuE" id="gdX-IV-U5z"/>
@@ -555,12 +555,11 @@
                         <outlet property="loginButton" destination="aqJ-nY-OJU" id="HgZ-Eu-pSe"/>
                         <outlet property="signUpButton" destination="37e-Ll-Vdr" id="zOe-kQ-A4J"/>
                         <outlet property="timelineLabel" destination="Dao-l2-BKX" id="rxd-vD-Pi4"/>
-                        <segue destination="hBN-yK-0bz" kind="presentation" identifier="toTimelineTableViewController" id="56U-33-SLH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wsD-xj-xTi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="514" y="-210"/>
+            <point key="canvasLocation" x="614" y="442"/>
         </scene>
         <!--Login Signup View Controller-->
         <scene sceneID="Wd9-9b-MmM">
@@ -635,7 +634,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oQi-T4-9nk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="772" y="614"/>
+            <point key="canvasLocation" x="614" y="1290"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="h9l-xC-nqG">
@@ -647,10 +646,10 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="kTg-JP-5bz" kind="presentation" identifier="toLoginSignupChoice" id="pDw-gi-NtE"/>
                         <segue destination="056-Cp-WBm" kind="relationship" relationship="viewControllers" id="8ob-sx-61D"/>
                         <segue destination="OoG-GG-MVv" kind="relationship" relationship="viewControllers" id="EEk-pL-5Dd"/>
-                        <segue destination="PKM-0n-3ks" kind="relationship" relationship="viewControllers" id="DCe-n6-WRa"/>
+                        <segue destination="TJH-0X-j53" kind="show" identifier="toLoginSignupChoice" id="IT6-1w-i9Y"/>
+                        <segue destination="WM5-7V-DXu" kind="relationship" relationship="viewControllers" id="Ol7-C7-jDh"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nn9-rp-YfA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -676,11 +675,11 @@
             </objects>
             <point key="canvasLocation" x="2008" y="735"/>
         </scene>
-        <!--Profile-->
+        <!--Navigation Controller-->
         <scene sceneID="4bE-E4-gWn">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WM5-7V-DXu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" id="zyu-an-Tdy"/>
+                    <tabBarItem key="tabBarItem" title="" image="profile" id="zyu-an-Tdy"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="h5t-7s-hLh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -729,7 +728,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y1Z-Bb-YgN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-410" y="-210"/>
+            <point key="canvasLocation" x="-310" y="442"/>
         </scene>
     </scenes>
     <resources>
@@ -738,9 +737,8 @@
         <image name="timeline" width="44" height="44"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="pDw-gi-NtE"/>
         <segue reference="bgR-8R-6mc"/>
-        <segue reference="DCe-n6-WRa"/>
         <segue reference="318-bo-mTu"/>
+        <segue reference="XW8-TR-R4O"/>
     </inferredMetricsTieBreakers>
 </document>
