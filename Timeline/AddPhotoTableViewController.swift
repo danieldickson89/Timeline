@@ -86,6 +86,6 @@ class AddPhotoTableViewController: UITableViewController, UIImagePickerControlle
     }
     
     @IBAction func cancelButtonTapped(sender: AnyObject) {
-        self.navigationController?.popViewControllerAnimated(true)
+        dismissViewControllerAnimated(true, completion: nil)
     }
 }
