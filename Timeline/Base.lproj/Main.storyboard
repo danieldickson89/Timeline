@@ -211,6 +211,7 @@
                                         </view>
                                         <connections>
                                             <outlet property="imageView" destination="uKP-nD-F6I" id="42T-Or-9Et"/>
+                                            <segue destination="UAh-BL-rtE" kind="show" id="fxb-NF-ORb"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -387,7 +388,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="miY-oL-dae" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4309" y="123"/>
+            <point key="canvasLocation" x="4281" y="91"/>
         </scene>
         <!--Add Photo Table View Controller-->
         <scene sceneID="i9B-uQ-nJP">
@@ -742,6 +743,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="XW8-TR-R4O"/>
+        <segue reference="fxb-NF-ORb"/>
         <segue reference="xSf-h9-wGV"/>
     </inferredMetricsTieBreakers>
 </document>
